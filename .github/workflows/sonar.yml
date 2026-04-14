@@ -24,17 +24,7 @@ jobs:
           args: >
             -Dsonar.projectKey=razorfadly298_administrasiSQA
             -Dsonar.organization=razorfadly298
-Perubahan dari versi sebelumnya:
 
-actions/checkout@v3 → @v4 (fix warning Node.js 20)
-sonarqube-scan-action@master → @v5 (versi stabil terbaru)
-Hapus GITHUB_TOKEN yang tidak diperlukan
-Sebelum commit, pastikan dulu SONAR_TOKEN sudah benar:
-
-Buka repo GitHub → Settings → Secrets and variables → Actions
-Pastikan ada secret bernama SONAR_TOKEN (huruf besar semua)
-Kalau ragu tokennya benar, hapus dan buat token baru di SonarCloud → My Account → Security → Generate Tokens, lalu update secret-nya
-Setelah update sonar.yml dan token, commit lagi dan kirim screenshot hasilnya ke sini.
 
 
 Want to be notified when Claude responds?
