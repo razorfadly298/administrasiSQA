@@ -25,5 +25,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=NAMA_PROJECT_KEY_KAMU
-            -Dsonar.organization=NAMA_ORGANISASI_KAMU
+            -Dsonar.projectKey=razorfadly298_administrasiSQA  
+            -Dsonar.organization=razorfadly298
