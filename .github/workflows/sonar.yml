@@ -2,11 +2,9 @@ name: SonarQube Analysis
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   sonarcloud:
@@ -14,16 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: SonarQube Cloud Scan
-        uses: SonarSource/sonarqube-scan-action@master
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=razorfadly298_administrasiSQA
-            -Dsonar.organization=administrasiSQA
+            -Dsonar.organization=razorfadly298
+Perubahan dari versi sebelumnya:
+
+actions/checkout@v3 → @v4 (fix warning Node.js 20)
+sonarqube-scan-action@master → @v5 (versi stabil terbaru)
+Hapus GITHUB_TOKEN yang tidak diperlukan
+Sebelum commit, pastikan dulu SONAR_TOKEN sudah benar:
+
+Buka repo GitHub → Settings → Secrets and variables → Actions
+Pastikan ada secret bernama SONAR_TOKEN (huruf besar semua)
+Kalau ragu tokennya benar, hapus dan buat token baru di SonarCloud → My Account → Security → Generate Tokens, lalu update secret-nya
+Setelah update sonar.yml dan token, commit lagi dan kirim screenshot hasilnya ke sini.
+
+
+Want to be notified when Claude responds?
