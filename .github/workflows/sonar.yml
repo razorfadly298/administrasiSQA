@@ -24,7 +24,3 @@ jobs:
           args: >
             -Dsonar.projectKey=razorfadly298_administrasiSQA
             -Dsonar.organization=razorfadly298
-
-
-
-Want to be notified when Claude responds?
